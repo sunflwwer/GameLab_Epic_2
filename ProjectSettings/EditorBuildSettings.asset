@@ -5,8 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Platformer Toolkit Demo/Platformer Toolkit Demo 1.unity
+    guid: bc0e3e491e9a7374f98e20889d17317a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 45eb6326ff4674853ad9da25672d778b, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f3c71efb2e74147528612863d177216c, type: 3}
+  m_UseUCBPForAssetBundles: 0

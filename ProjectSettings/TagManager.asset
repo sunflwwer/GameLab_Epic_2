@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Mark
   - Lab
@@ -17,7 +17,7 @@ TagManager:
   - Hurt
   - Kill
   - Mechanic
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -58,3 +58,5 @@ TagManager:
   - name: UI - Top
     uniqueID: 562644223
     locked: 0
+  m_RenderingLayers:
+  - Default

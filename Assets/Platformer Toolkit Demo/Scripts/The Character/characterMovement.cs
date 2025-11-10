@@ -71,8 +71,11 @@ namespace GMTK.PlatformerToolkit {
 
             //Calculate's the character's desired velocity - which is the direction you are facing, multiplied by the character's maximum speed
             //Friction is not used in this game
-            desiredVelocity = new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f);
-
+            if (onGround) {
+                desiredVelocity = new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f);
+            } else {
+                desiredVelocity = new Vector2(0, 0f);
+            }
         }
 
         private void FixedUpdate() {
@@ -82,7 +85,7 @@ namespace GMTK.PlatformerToolkit {
             onGround = ground.GetOnGround();
 
             //Get the Rigidbody's current velocity
-            velocity = body.velocity;
+            velocity = body.linearVelocity;
 
             //Calculate movement, depending on whether "Instant Movement" has been checked
             if (useAcceleration) {
@@ -124,7 +127,7 @@ namespace GMTK.PlatformerToolkit {
             velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
 
             //Update the Rigidbody with this new velocity
-            body.velocity = velocity;
+            body.linearVelocity = velocity;
 
         }
 
@@ -132,7 +135,7 @@ namespace GMTK.PlatformerToolkit {
             //If we're not using acceleration and deceleration, just send our desired velocity (direction * max speed) to the Rigidbody
             velocity.x = desiredVelocity.x;
 
-            body.velocity = velocity;
+            body.linearVelocity = velocity;
         }
     }
 }
